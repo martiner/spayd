@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>cz.geek</groupId>
 	<artifactId>geek-spayd</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.0</version>
 	<packaging>jar</packaging>
 	<name>${project.artifactId}</name>
 	<description>Geek.cz Java utils</description>
