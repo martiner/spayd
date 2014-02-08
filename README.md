@@ -1,5 +1,7 @@
 # Geek SPAYD
 
+[![Build Status](https://travis-ci.org/martiner/spayd.png?branch=master)](https://travis-ci.org/martiner/spayd)
+
 A Java library for generating [SPAYD (Short Payment Descriptor)](http://qr-platba.cz/) QR codes
 which doesn't [suck](https://github.com/spayd/spayd-java).
 
