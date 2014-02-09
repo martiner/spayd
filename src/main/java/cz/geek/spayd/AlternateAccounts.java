@@ -36,4 +36,10 @@ public class AlternateAccounts implements SpaydValue {
 		}
 		return s.toString();
 	}
+
+	@Override
+	public String toString() {
+		return asString();
+	}
+
 }

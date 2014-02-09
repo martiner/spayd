@@ -89,4 +89,9 @@ public class SpaydPayment {
 		putSimpleValue("NTA", phone);
 	}
 
+	@Override
+	public String toString() {
+		return elements.toString();
+	}
+
 }

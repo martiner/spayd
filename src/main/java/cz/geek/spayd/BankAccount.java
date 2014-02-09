@@ -34,4 +34,10 @@ public class BankAccount implements SpaydValue {
 	public String asString() {
 		return bic == null ? iban : iban + "+" + bic;
 	}
+
+	@Override
+	public String toString() {
+		return asString();
+	}
+
 }

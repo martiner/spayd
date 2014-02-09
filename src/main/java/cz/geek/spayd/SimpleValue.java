@@ -25,6 +25,11 @@ public class SimpleValue<T> implements SpaydValue {
 		return escapeDisallowedCharacters(value.toString().trim());
 	}
 
+	@Override
+	public String toString() {
+		return value.toString();
+	}
+
 	/**
 	 * Escapes the payment string value in a correct way
 	 * @param originalString The original non-escaped value

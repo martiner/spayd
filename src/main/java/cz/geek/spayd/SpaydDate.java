@@ -25,4 +25,10 @@ public class SpaydDate implements SpaydValue {
 	public String asString() {
 		return format.format(date);
 	}
+
+	@Override
+	public String toString() {
+		return asString();
+	}
+
 }
