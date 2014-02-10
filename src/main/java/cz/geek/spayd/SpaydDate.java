@@ -6,24 +6,19 @@ package cz.geek.spayd;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static org.apache.commons.lang.Validate.notNull;
-
 /**
  * Formatted non-null date
  */
-public class SpaydDate implements SpaydValue {
+public class SpaydDate extends SpaydWrappedValue<Date> {
 
 	private final SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
 
-	private Date date;
-
 	public SpaydDate(Date date) {
-		notNull(date);
-		this.date = date;
+		super(date);
 	}
 
 	public String asString() {
-		return format.format(date);
+		return format.format(value);
 	}
 
 	@Override

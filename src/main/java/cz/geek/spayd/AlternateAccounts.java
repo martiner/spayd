@@ -25,6 +25,10 @@ public class AlternateAccounts implements SpaydValue {
 		this(asList(accounts));
 	}
 
+	public List<BankAccount> getAccounts() {
+		return accounts;
+	}
+
 	public String asString() {
 		final StringBuilder s = new StringBuilder();
 		int i = 0;

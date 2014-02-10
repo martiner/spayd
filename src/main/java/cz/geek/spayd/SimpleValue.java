@@ -7,27 +7,17 @@ package cz.geek.spayd;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
-import static org.apache.commons.lang.Validate.notNull;
-
 /**
  * Simple non-null value
  */
-public class SimpleValue<T> implements SpaydValue {
-
-	private T value;
+public class SimpleValue<T> extends SpaydWrappedValue<T> {
 
 	private SimpleValue(T value) {
-		notNull(value);
-		this.value = value;
+		super(value);
 	}
 
 	public String asString() {
 		return escapeDisallowedCharacters(value.toString().trim());
-	}
-
-	@Override
-	public String toString() {
-		return value.toString();
 	}
 
 	/**
@@ -58,7 +48,6 @@ public class SimpleValue<T> implements SpaydValue {
 			throw new RuntimeException("UTF-8 should ever be supported", e);
 		}
 	}
-
 
 	public static <T> SimpleValue<T> simpleValue(T value) {
 		return new SimpleValue<T>(value);
