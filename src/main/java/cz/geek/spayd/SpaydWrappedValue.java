@@ -1,6 +1,6 @@
 package cz.geek.spayd;
 
-import static org.apache.commons.lang.Validate.notNull;
+import static org.apache.commons.lang3.Validate.notNull;
 
 /**
  * Wrapped non-null value

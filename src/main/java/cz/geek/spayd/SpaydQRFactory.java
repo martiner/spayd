@@ -21,8 +21,8 @@ import java.io.OutputStream;
 import java.util.EnumMap;
 import java.util.Map;
 
-import static org.apache.commons.lang.Validate.notEmpty;
-import static org.apache.commons.lang.Validate.notNull;
+import static org.apache.commons.lang3.Validate.notEmpty;
+import static org.apache.commons.lang3.Validate.notNull;
 
 public class SpaydQRFactory {
 

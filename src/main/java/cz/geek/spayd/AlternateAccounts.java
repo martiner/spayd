@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.Arrays.asList;
-import static org.apache.commons.lang.Validate.noNullElements;
+import static org.apache.commons.lang3.Validate.noNullElements;
 
 /**
  * Alternate {@link BankAccount}s

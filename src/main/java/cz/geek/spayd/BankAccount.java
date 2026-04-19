@@ -3,7 +3,7 @@
  */
 package cz.geek.spayd;
 
-import static org.apache.commons.lang.Validate.notEmpty;
+import static org.apache.commons.lang3.Validate.notEmpty;
 
 /**
  * Bank account
