@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>cz.geek</groupId>
 	<artifactId>geek-spayd</artifactId>
-	<version>0.1.1-SNAPSHOT</version>
+	<version>0.3.0</version>
 	<packaging>jar</packaging>
 	<name>${project.artifactId}</name>
 	<description>A Java library for generating SPAYD QR codes</description>
@@ -24,7 +24,8 @@
 		<url>git@github.com:martiner/spayd.git</url>
 		<connection>scm:git:git@github.com:martiner/spayd.git</connection>
 		<developerConnection>scm:git:${basedir}</developerConnection>
-	</scm>
+	  <tag>geek-spayd-0.3.0</tag>
+  </scm>
 	<developers>
 		<developer>
 			<name>Martin Caslavsky</name>
