@@ -1,6 +1,8 @@
 # Geek SPAYD
 
-[![Build Status](https://travis-ci.org/martiner/spayd.png?branch=master)](https://travis-ci.org/martiner/spayd)
+[![Build Status](https://github.com/martiner/spayd/actions/workflows/build-branch.yml/badge.svg?branch=master)](https://github.com/martiner/spayd/actions/workflows/build-branch.yml)
+[![Maven Central](https://maven-badges.sml.io/maven-central/cz.geek/spayd/badge.svg)](https://maven-badges.sml.io/maven-central/cz.geek/spayd)
+[![Javadocs](http://javadoc.io/badge/cz.geek/spayd.svg)](http://javadoc.io/doc/cz.geek/spayd)
 
 A Java library for generating [SPAYD (Short Payment Descriptor)](http://qr-platba.cz/) QR codes
 which doesn't [suck](https://github.com/spayd/spayd-java).

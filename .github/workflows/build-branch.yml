@@ -1,0 +1,30 @@
+name: build
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Git
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version-file: .java-version
+          cache: 'maven'
+
+      - name: Build with Maven
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
+        run: ./mvnw -B verify javadoc:javadoc
+
+      - name: Publish Tests Report
+        uses: martiner/action-junit-report@v5
+        if: success() || failure()
+        with:
+          report_paths: 'target/*-reports/TEST-*.xml'
