@@ -5,7 +5,6 @@
 package cz.geek.spayd;
 
 import com.google.zxing.*;
-import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import com.google.zxing.qrcode.encoder.Encoder;
@@ -71,7 +70,6 @@ public class SpaydQRFactory {
 		final Writer writer = new MultiFormatWriter();
 		try {
 			final Map<EncodeHintType, Object> hints = new EnumMap<EncodeHintType, Object>(EncodeHintType.class);
-			hints.put(EncodeHintType.CHARACTER_SET, "ISO-8859-1");
 			final QRCode code = Encoder.encode(paymentString, ErrorCorrectionLevel.M, hints);
 			hints.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.M);
 			barsize = size / (code.getMatrix().getWidth() + 8);
@@ -80,9 +78,19 @@ public class SpaydQRFactory {
 			throw new SpaydQRException("Unable to create QR code", e);
 		}
 
-		final BufferedImage image = MatrixToImageWriter.toBufferedImage(matrix);
+		final BufferedImage image = toImage(matrix);
 
 		return isBranded() ? brandImage(image, barsize) : image;
+	}
+
+	private static BufferedImage toImage(BitMatrix matrix) {
+		final BufferedImage image = new BufferedImage(matrix.getWidth(), matrix.getHeight(), BufferedImage.TYPE_BYTE_BINARY);
+		for (int y = 0; y < matrix.getHeight(); y++) {
+			for (int x = 0; x < matrix.getWidth(); x++) {
+				image.setRGB(x, y, matrix.get(x, y) ? Color.BLACK.getRGB() : Color.WHITE.getRGB());
+			}
+		}
+		return image;
 	}
 
 	protected BufferedImage brandImage(BufferedImage image, int barsize) {
